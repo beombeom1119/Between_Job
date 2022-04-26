@@ -1,38 +1,56 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Jua&display=swap');
+
+.App
+{
+    background-color:#ffffff;
+    width : 390px;
+    height : 844px;  
+    font-family: 'Jua', sans-serif;
+}
+
+.Header
+{
+  width : 390px;
+  height : 50px;
+  background-color: #d3d5ff;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+}
+
+.Content
+{
+  width : 390px;
+  height : 734px;
+  background-color: #ffffff;
+}
+
+.Footer
+{
+  padding-right: 15px;
+  padding-left: 15px;
   text-align: center;
+  width : 360px;
+  height : 60px;
+  background-color: #d3d5ff;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;    /* 요소 별 간격 같게 */
+  font-size: 25px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Footer .bottomNav
+{
+  text-align: center;
+  font-size: 15px;
+  white-space: nowrap;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Footer .bottomNav label
+{
+  margin-left: 3px;
 }
