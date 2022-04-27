@@ -38,6 +38,11 @@
   border-top: 0.8px solid black;
 }
 
+.Container
+{
+  height:584px;
+}
+
 .Footer .bottomNav
 {
   text-align: center;
@@ -60,16 +65,17 @@
   background-color: #f6f6f6;
 }
 
-
 .Content
 {
   width : 380px;
-  height : 649px;
+  height : 644px;
   background-color: #FDFDFD;
 }
 
-.CreateForm h3
+.CreateForm p
 {
+  margin-top: 0px;
+  padding-top: 5px;
   text-align: center;
 }
 
@@ -90,6 +96,7 @@ textarea::placeholder,input::placeholder {
 
 .CreateForm
 {
+  height: 485px;
   padding-right: 20px;
   padding-left: 20px;
 }
@@ -107,20 +114,21 @@ textarea::placeholder,input::placeholder {
 {
   border: none;
   border-bottom: 1px solid rgb(231, 231, 231);
-  height: 50px;
+  height: 45px;
   font-size: 15px;
 }
 
 .CreateForm #content
 {
   border: none;
-  height: 270px;
+  height: 265px;
   font-size: 15px;
 }
 
 .btnSave {
   margin-top: 10px;
   margin-bottom: 10px;
+  height: 40px;
   appearance: button;
   backface-visibility: hidden;
   background-color: #405cf5;
@@ -132,11 +140,9 @@ textarea::placeholder,input::placeholder {
   font-weight: bold;
   cursor: pointer;
   font-size: 100%;
-  height: 44px;
   line-height: 1.15;
   outline: none;
   overflow: hidden;
-  padding: 0 25px;
   position: relative;
   text-align: center;
   text-transform: none;

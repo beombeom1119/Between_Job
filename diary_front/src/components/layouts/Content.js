@@ -4,6 +4,7 @@ import Create from '../Create'
 import Home from '../Home'
 import Footer from './Footer'
 import Header from './Header'
+import MyPage from './MyPage'
 
 
 const Content = () => {
@@ -12,9 +13,10 @@ const Content = () => {
     <BrowserRouter>
     <Header></Header>
     <Routes>
-    <Route exact path="/" element={<Home></Home>}/>
+    <Route exact path="/" element={<Home></Home>} />
     {/* <Route path="/mypage" element= {<MyPage></MyPage>}></Route> */}
     <Route path="/create" element= {<Create></Create>}/>
+    <Route path="/mypage" element= {<MyPage></MyPage>}/>
     </Routes>
     <Footer></Footer>
     </BrowserRouter>

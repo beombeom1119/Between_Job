@@ -67,13 +67,11 @@ const encodeFileToBase64 = (fileBlob) => {
   
 
   return (    
-      <>
+      <div className='Container'>
       <form className='CreateForm'>
-        <h3>일기 작성</h3>  
-      
-        {/* 사진 관련 */}
+        <p>일기 작성</p>
         <div className="preview" style={{paddingLeft:"40px"}}>
-          {imageSrc && <img id="preview_img" src={imageSrc} alt="preview-img" style={{ marginBottom: "20px", width: "60px", height: "60px", textAlign: "center" }} />}
+          {imageSrc && <img id="preview_img" src={imageSrc} alt="preview-img" style={{ width: "60px", height: "60px", textAlign: "center" }} />}
         </div>
         <div className="filebox" style={{paddingLeft:"40px"}}> <label htmlFor="ex_file" >{ isUpload&&<img src={Camera} style={{width:"60px", height:"60px" ,backgroundColor:"#ffffff"}}/>}</label> <input type="file" id="ex_file" style={{visibility:"hidden"}}
           onChange={(e) => { encodeFileToBase64(e.target.files[0]); setIsUpload(false) }} /> </div>
@@ -87,7 +85,7 @@ const encodeFileToBase64 = (fileBlob) => {
       <div style={{ textAlign: "right", marginRight: "40px"}}>      
      <Button className="btnSave" onClick={() => {createDiaryForm(); window.location.href="/"}} >쓰기</Button>
       </div>
-    </>
+    </div>
 
   )
 }
