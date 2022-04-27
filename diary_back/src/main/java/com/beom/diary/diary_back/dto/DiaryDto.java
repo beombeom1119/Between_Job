@@ -15,12 +15,13 @@ public class DiaryDto {
     private String img;
     private Date date;
     private boolean commit;
+    private Integer score;
 
 
 
     public Diary toEntity()
     {
-        return new Diary(id,title,content,img, date, commit);
+        return new Diary(id,title,content,img, date, commit,score);
     }
 
 

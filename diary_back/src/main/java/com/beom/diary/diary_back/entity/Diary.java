@@ -2,6 +2,7 @@ package com.beom.diary.diary_back.entity;
 
 
 import lombok.*;
+
 import javax.persistence.*;
 import java.sql.Date;
 
@@ -32,6 +33,8 @@ public class Diary {
     @Column
     private boolean commit;
 
+    @Column
+    private Integer score;
 
     public void update(Diary diary) {
         if (diary.id != null) {
@@ -55,8 +58,9 @@ public class Diary {
         if (diary.date != null) {
             this.date = diary.date;
         }
-
+        if (diary.score != null) {
+            this.score = diary.score;
+        }
     }
-
 
 }

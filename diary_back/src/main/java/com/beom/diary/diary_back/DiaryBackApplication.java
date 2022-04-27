@@ -2,6 +2,9 @@ package com.beom.diary.diary_back;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 public class DiaryBackApplication {
@@ -9,5 +12,15 @@ public class DiaryBackApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DiaryBackApplication.class, args);
 	}
+	@Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/**").allowedOrigins("*").allowedMethods("GET", "POST","PUT","DELETE");
+			}
+		};
+	}
+
 
 }
