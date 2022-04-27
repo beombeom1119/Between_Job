@@ -44,6 +44,13 @@ public class DiaryController {
         return updateDiary;
     }
 
+    @PutMapping("/update/commit/{id}")
+    public Diary updateCommit(@PathVariable Long id)
+    {
+        Diary updateDiary = diaryService.updateCommit(id);
+        return updateDiary;
+    }
+
 
 
 

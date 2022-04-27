@@ -41,8 +41,22 @@ public class DiaryService {
         Diary updateDiary = diaryRepository.findById(id).orElse(null);
         updateDiary.update(diary);
         return updateDiary;
+    }
 
+    public Diary updateCommit(Long id)
+    {
 
+        Diary updateCommitDiary = diaryRepository.findById(id).orElse(null);
+        if (updateCommitDiary.isCommit()==true)
+        {
+            updateCommitDiary.setCommit(false);
+        }
+        else
+        {
+            updateCommitDiary.setCommit(true);
+        }
+        diaryRepository.save(updateCommitDiary);
+        return updateCommitDiary;
     }
 
 
