@@ -6,9 +6,7 @@ import Header from './components/layouts/Header';
 function App() {
   return (
     <div className="App">
-      <Header></Header>
       <Content></Content>
-      <Footer></Footer>
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { Button } from 'react-bootstrap'
 import Camera from './images/camera.png'
@@ -76,7 +75,7 @@ const encodeFileToBase64 = (fileBlob) => {
         <div className="preview" style={{paddingLeft:"40px"}}>
           {imageSrc && <img id="preview_img" src={imageSrc} alt="preview-img" style={{ marginBottom: "20px", width: "60px", height: "60px", textAlign: "center" }} />}
         </div>
-        <div className="filebox" style={{paddingLeft:"40px"}}> <label htmlFor="ex_file" >{ isUpload&&<img src={Camera} style={{width:"60px", height:"60px"}}/>}</label> <input type="file" id="ex_file" style={{visibility:"hidden"}}
+        <div className="filebox" style={{paddingLeft:"40px"}}> <label htmlFor="ex_file" >{ isUpload&&<img src={Camera} style={{width:"60px", height:"60px" ,backgroundColor:"#ffffff"}}/>}</label> <input type="file" id="ex_file" style={{visibility:"hidden"}}
           onChange={(e) => { encodeFileToBase64(e.target.files[0]); setIsUpload(false) }} /> </div>
         {/* 사진 관련 */}
 
@@ -85,7 +84,7 @@ const encodeFileToBase64 = (fileBlob) => {
         <input id="score" name="score" value={Diary.score || ''} placeholder='오늘 하루는 몇점?' onChange={onChange}></input> 점<br/><br/>
       </form>
 
-      <div style={{ textAlign: "right", marginRight: "40px"}}>        
+      <div style={{ textAlign: "right", marginRight: "40px"}}>      
      <Button className="btnSave" onClick={() => {createDiaryForm(); window.location.href="/"}} >쓰기</Button>
       </div>
     </>

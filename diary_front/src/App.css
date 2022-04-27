@@ -50,6 +50,8 @@
 .Footer .bottomNav label
 {
   margin-left: 3px;
+  color : black;
+  text-decoration :none !important;
 }
 
 .Footer :hover
@@ -61,7 +63,7 @@
 
 .Content
 {
-  width : 390px;
+  width : 380px;
   height : 649px;
   background-color: #FDFDFD;
 }
@@ -73,7 +75,7 @@
 
 .CreateForm textarea,input
 {
-  width: 290px;
+  width: 280px;
   font-family: 'Nanum Gothic', sans-serif;
   font-size: 20px;
   padding-left: 10px;
@@ -96,7 +98,7 @@ textarea::placeholder,input::placeholder {
 .CreateForm #score
 {
   border: none;
-  width: 290px;
+  width: 280px;
   text-align: right;
   font-size: 15px;
 }
@@ -112,10 +114,13 @@ textarea::placeholder,input::placeholder {
 .CreateForm #content
 {
   border: none;
-  height: 290px;
+  height: 270px;
   font-size: 15px;
 }
+
 .btnSave {
+  margin-top: 10px;
+  margin-bottom: 10px;
   appearance: button;
   backface-visibility: hidden;
   background-color: #405cf5;
