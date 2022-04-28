@@ -1,9 +1,10 @@
 import React from 'react'
 
-const MyPage = () => {
+const Mypage = () => {
   return (
-    <div className='Container'>MyPage</div>
+
+    <>sad</>
   )
 }
 
-export default MyPage
+export default Mypage

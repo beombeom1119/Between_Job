@@ -1,172 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=IBM+Plex+Sans+KR&family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap&family=IBM+Plex+Sans+KR&family=Jua&display=swap');
 
-.App
+body
 {
-    background-color:#FDFDFD;
-    width : 390px;
-    height : 694px;  
-    font-family: 'Nanum Gothic', sans-serif;
+  background-color: #c9b58d;
 }
 
-.Header
-{
-  width : 370px;
-  padding-left: 20px;
-  height : 60px;
-  /* background-color: #FDFDFD; */
-  background-color: #B6C1FF;
-  color: rgb(0, 0, 0);
+.container {
   display: flex;
-  font-weight: bold;
-  align-items: center;
-  font-size: 25px;
-  border-bottom: 0.8px solid #ccc;;
 }
 
-.Footer
-{
-  padding-top: 5px;
-  padding-right: 30px;
-  padding-left: 30px;
-  text-align: center;
-  width : 330px;
-  height : 60px;
-  background-color: #B6C1FF;
-  color: rgb(0, 0, 0);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;    /* 요소 별 간격 같게 */
-  font-size: 25px;
-  border-top: 0.8px solid #ccc;
-}
-
-.Container
-{
-  height:584px;
-}
-
-.Footer .bottomNav
-{
-  text-align: center;
-  font-size: 15px;
-  white-space: nowrap;
-  display: flex;
-  flex-direction: column;
-}
-
-.Footer .bottomNav label
-{
-  margin-left: 3px;
-  color : black;
-  text-decoration :none !important;
-  font-size: 10px;
-}
-
-.Footer :hover
-{ 
-  border-radius: 8px; 
-  background-color: #f6f6f6;
-}
-
-.Content
-{
-  width : 380px;
-  height : 644px;
-  background-color: #FDFDFD;
-}
-
-.CreateForm p
-{
-  margin-top: 0px;
-  padding-top: 5px;
-  text-align: center;
-}
-
-.CreateForm textarea,input
-{
-  width: 280px;
-  font-family: 'Nanum Gothic', sans-serif;
-  font-size: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: none;
-  resize: none;
-}
-
-textarea::placeholder,input::placeholder {
-	color: #ccc;
-}
-
-.CreateForm
-{
-  height: 485px;
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-
-.CreateForm #score
-{
-  border: none;
-  width: 280px;
+.box {
+  flex: 33.33%;
+  height: 100vh;
   text-align: right;
-  font-size: 15px;
-}
+  vertical-align : center;
+  font-family: 'Asap', sans-serif;
+  color: rgb(126, 116, 96);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 
-.CreateForm #title
-{
+}	
+
+.box h1{
+  background: transparent;
   border: none;
-  border-bottom: 1px solid #ccc;
-  height: 45px;
-  font-size: 15px;
-}
-
-.CreateForm #content
-{
-  border: none;
-  height: 265px;
-  font-size: 15px;
-}
-
-.btnSave {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  height: 40px;
-  appearance: button;
-  backface-visibility: hidden;
-  background-color: #405cf5;
-  border-radius: 6px;
-  border-width: 0;
-  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
-  box-sizing: border-box;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 100%;
-  line-height: 1.15;
   outline: none;
-  overflow: hidden;
-  position: relative;
+  font-family: 'ASAP';
   text-align: center;
-  text-transform: none;
-  transform: translateZ(0);
-  transition: all .2s,box-shadow .08s ease-in;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 80px;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  width: 100%;
+  z-index: 100;
+  position: relative;
+  margin-bottom: 20px;
+  transition: color 125ms ease-in-out;
 }
 
-.btnSave:disabled {
-  cursor: default;
-}
-
-.btnSave:focus {
-  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
-}
-
-.filebox :hover
+.box link
 {
-  border-radius: 8px; 
-  background-color: #f6f6f6;
+  background-color: red;
+}
+
+.box:hover{
+  background-color: #c3af89;
+}
+
+.box img{
+  width: 10vw;
+  height: 18vh;
+  white-space: nowrap;
+  margin-bottom: 2vw;
 }
