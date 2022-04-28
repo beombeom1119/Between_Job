@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Button } from 'react-bootstrap'
+import { Button, InputGroup } from 'react-bootstrap'
 import Camera from './images/camera.png'
+import Footer from './layouts/Footer'
 
 
 
@@ -67,26 +68,28 @@ const encodeFileToBase64 = (fileBlob) => {
   
 
   return (    
-      <div className='Container'>
+    <>
+    <Footer></Footer>
       <form className='CreateForm'>
-        <p>일기 작성</p>
-        <div className="preview" style={{paddingLeft:"40px"}}>
-          {imageSrc && <img id="preview_img" src={imageSrc} alt="preview-img" style={{ width: "60px", height: "60px", textAlign: "center" }} />}
+        <div className='CreateBox'>
+        <h1>취준 일기 작성</h1>
+        <div className="preview">
+          {imageSrc && <img className='todayPhotoload' src={imageSrc} alt="preview-img"/>}
         </div>
-        <div className="filebox" style={{paddingLeft:"40px"}}> <label htmlFor="ex_file" >{ isUpload&&<img src={Camera} style={{width:"60px", height:"60px" ,backgroundColor:"#ffffff"}}/>}</label> <input type="file" id="ex_file" style={{visibility:"hidden"}}
+        <div className="filebox"><label htmlFor="ex_file" >{ isUpload&&<img className="todayPhoto" src={Camera}/>}<p>오늘의 공부 사진</p></label> <input type="file" id="ex_file" style={{visibility:"hidden"}}
           onChange={(e) => { encodeFileToBase64(e.target.files[0]); setIsUpload(false) }} /> </div>
         {/* 사진 관련 */}
-
-        <input id="title" name="title" value={Diary.title || ''} placeholder="당일 취준 제목" onChange={onChange}></input><br/>
+        </div>
+        <div className='CreateBox'>
+        <h2>오늘 제목</h2>
+        <input id="inputGroup-sizing-sm"  name="title" value={Diary.title || ''} placeholder="당일 취준 제목" onChange={onChange}></input><br/>
+        <h2>취준 내용</h2>
         <textarea id="content" name="content" value={Diary.content || ''} placeholder="당일 취준 내용" onChange={onChange}></textarea><br/>
         <input id="score" name="score" value={Diary.score || ''} placeholder='오늘 하루는 몇점?' onChange={onChange}></input> 점<br/><br/>
-      </form>
-
-      <div style={{ textAlign: "right", marginRight: "40px"}}>      
-     <Button className="btnSave" onClick={() => {createDiaryForm(); window.location.href="/"}} >쓰기</Button>
+        <Button className="btnSave" onClick={() => {createDiaryForm(); window.location.href="/"}} >쓰기</Button>
       </div>
-    </div>
-
+      </form>
+      </>
   )
 }
 

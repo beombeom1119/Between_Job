@@ -4,6 +4,7 @@ import Diary from './components/Diary';
 import Home from './components/layouts/Home';
 import Create from './components/Create';
 import Mypage from './components/layouts/Mypage';
+import Footer from './components/layouts/Footer';
 
 
 function App() {
