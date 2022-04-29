@@ -10,6 +10,12 @@ body
   display: flex;
 }
 
+.diaryContainer div
+{
+  font-size: 20px;
+  margin: 1%;
+}
+
 .box {
   flex: 33.33%;
   height: 95vh;
@@ -70,7 +76,7 @@ body
 .todayPhoto,.todayPhotoload
 {
   border-radius: 20px;
-  margin-left: 100px;
+  margin-left: 23%;
   margin-top: 30px;
   width: 20vw;
   height: 30vh;
@@ -85,7 +91,7 @@ body
 
 .filebox p
 {
-  margin-left: 150px;
+  margin-left: 30%;
   font-size: 25px;
   width: 180px;
   font-family: 'Gowun Dodum', sans-serif;
@@ -109,7 +115,7 @@ input {
 }
 
 input:focus {
-  outline:1px solid #94836f;
+  outline: 0.1px solid #af9b85;
 }
 
 textarea {
@@ -124,7 +130,7 @@ textarea {
 }
 
 textarea:focus {
-  outline:1px solid #94836f;
+  outline: 0.1px solid #af9b85;
 }
 
 .btnSave
@@ -132,8 +138,17 @@ textarea:focus {
   background-color: #c9b58d;
   border: none;
   font-size: 25px;
-  margin-left: 300px;
+  font-family: 'Gowun Dodum', sans-serif;
+  float: right;
+  margin-right: 150px;
 }
+
+.btnSave:hover
+{
+  background-color: #c9b58d;
+  outline: 0.1px solid #af9b85;
+}
+
 
 
 /* .CreateBox {
@@ -154,9 +169,88 @@ textarea:focus {
   float: left;
 }
 
+#score
+{
+  text-align: right;
+  width: 20vw;
+  margin-right: 10px;
+}
+.scoreDiv
+{
+  text-align: right;
+  margin-right: 300px;
+}
 
-.footer
+.Header
 {
   background-color: #c3af89;
   height: 5vh;
+  display: flex;
 }
+
+.Container 
+{
+  margin-left: 2vw;
+}
+
+
+.Container td
+{
+  width: 20vw;
+}
+
+.Container h2
+{
+  margin-left: 13vw;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.t_title
+{
+  width: 500px;
+  text-align: left;
+  margin-left: 30px !important;
+  margin-right: 20px !important;
+  font-size: 2vw !important;
+  font-weight: 700px !important;
+  margin-bottom: 30px !important;
+}
+
+.t_content
+{
+  margin-left: 40px !important;
+  font-size: 1vw !important;
+}
+
+.t_score
+{
+  text-align: left;
+  width: 200px;
+  padding-left: 90px;
+  font-size: 1.5vw !important;
+  font-weight: 700px !important;
+  padding-right: 1vw;
+}
+
+.t_commit
+{
+  margin-top: 20vh; 
+  padding-left: 10vw;
+  font-size: 30px;
+}
+
+.diaryContainer
+{
+align-items: center;
+margin-left: 15vw;
+margin-bottom: 10px;
+width: 65%;
+border-radius: 30px;
+height: 18vw;
+float: left;
+display: flex;
+background-color: rgb(218, 199, 173);
+border: 0.3px solid #b9a581;
+}
+

@@ -1,10 +1,11 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Diary from './components/Diary';
-import Home from './components/layouts/Home';
-import Create from './components/Create';
-import Mypage from './components/layouts/Mypage';
-import Footer from './components/layouts/Footer';
+import Home from './components/Home';
+import Write from './components/Write';
+import Theseday from './components/Theseday';
+
+
 
 
 function App() {
@@ -15,9 +16,9 @@ function App() {
     <Routes>
     <Route exact path="/" element={<Home/>}/>
     {/* <Route path="/mypage" element= {<MyPage></MyPage>}></Route> */}
-    <Route path="/create" element= {<Create/>}/>
-    <Route path="/mypage" element= {<Mypage/>}/>
-    <Route path="/diary" element={<Diary/>} />
+    <Route path="/diary" element= {<Diary/>}/>
+    <Route path="/write" element= {<Write/>}/>
+    <Route path="/theseday" element={<Theseday/>} />
     </Routes>
     </BrowserRouter>
     </div>

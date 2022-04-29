@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
+import Header from './layouts/Header'
 // import X from './images/X.png'
 // import Check from './images/Check.png'
 
@@ -19,7 +20,6 @@ const Diary = () => {
     setDiarys(result.data);
   };
 
-  const Header = ["사진", "취준 내용", "당일 점수","커밋 했어?"]
   
   // const score= async (key) =>
   // {
@@ -42,33 +42,39 @@ const Diary = () => {
   
   
   return (
+    <>
+    <Header></Header>
     <div className='Container'>
     <Table className='diaryTable'>
       <thead>
         {/* <tr>
-          <th>{Header[0]}</th>
-          <th>{Header[1]}</th>
-          <th>{Header[2]}</th>
-          <th>{Header[3]}</th>
+          <th>{tableHeader[0]}</th>
+          <th>{tableHeader[1]}</th>
+          <th>{tableHeader[2]}</th>
+          <th>{tableHeader[3]}</th>
         </tr> */}
       </thead>
       <tbody>
+        <h2>일기장</h2>
         {Diarys.map((DiaryList) => {
           return (
-            <tr key={DiaryList.id}>
-              <td><img  style={{width:"100px",height:"100px",borderRadius:"8px"}} src={DiaryList.img}></img></td>
-              <td className='t_title'>{DiaryList.title}</td>
-              <td className='t_score' style={{width:"10px"}}>{DiaryList.score} 점</td>
-              {/* {DiaryList.commit === true ? <td onClick={()=>commit(DiaryList.id)}><img style={{width:"30px",height:"30px",borderRadius:"8px"}} src={Check} ></img></td> : <td onClick={()=>commit(DiaryList.id)}><img style={{width:"30px",height:"30px",borderRadius:"8px"}} src={X}></img></td>} */}
+            <div className="diaryContainer" key={DiaryList.id}>
+              <div><img style={{width:"15vw",height:"30vh",borderRadius:"30px", marginLeft:"10px"}} src={DiaryList.img}></img></div>
+              <td>
+              <h6 style={{marginLeft:"30px","marginBottom":"3px"}} >{DiaryList.date}</h6>
+              <div className='t_title'>{DiaryList.title}</div>
+              <div className='t_content'>{DiaryList.content}</div>
+              </td>
+              <div className='t_score'>{DiaryList.score}점</div>
+              {DiaryList.commit === true ? <td className='t_commit' onClick={()=>commit(DiaryList.id)}>O</td> : <td className='t_commit' onClick={()=>commit(DiaryList.id)}>X</td>}
               {/* <td>{playerList.goal} <button onClick={async () => score(playerList.number)}>+</button> <button onClick={async () => {  score_cancel(playerList.number) }}>-</button> </td> */}                        
-            </tr>
-
-            
+            </div>
           );
         })}
       </tbody>
     </Table>
     </div>
+    </>
   );
 };
 
