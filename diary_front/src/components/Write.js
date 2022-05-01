@@ -49,7 +49,7 @@ const onChange = (e) => {
 const createDiaryForm = () => {
   if (window.confirm("일기를 추가하시겠습니까?") === true){    
     createDiary();
-    window.location.href="/"
+    window.location.href="/diary"
 }else{   
     
 }

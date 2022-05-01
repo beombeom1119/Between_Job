@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Diary from './components/Diary';
 import Home from './components/Home';
+import Update from './components/Update';
 import Write from './components/Write';
 import Theseday from './components/Theseday';
 
@@ -19,6 +20,7 @@ function App() {
     <Route path="/diary" element= {<Diary/>}/>
     <Route path="/write" element= {<Write/>}/>
     <Route path="/theseday" element={<Theseday/>} />
+    <Route path="/update/:id" element={<Update/>} />
     </Routes>
     </BrowserRouter>
     </div>

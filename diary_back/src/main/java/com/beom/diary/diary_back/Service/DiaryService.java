@@ -38,8 +38,9 @@ public class DiaryService {
     public Diary update(Long id, DiaryDto diaryDto)
     {
         Diary diary = diaryDto.toEntity();
-        Diary updateDiary = diaryRepository.findById(id).orElse(null);
-        updateDiary.update(diary);
+        Diary target = diaryRepository.findById(id).orElse(null);
+        target.update(diary);
+        Diary updateDiary = diaryRepository.save(target);
         return updateDiary;
     }
 
