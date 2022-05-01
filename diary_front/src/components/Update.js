@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Button, InputGroup } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import Camera from './images/camera.png'
 import Header from './layouts/Header'
 import { useParams } from 'react-router-dom'
@@ -97,7 +97,7 @@ const Update = () => {
                     <div className="preview">
                         {imageSrc && <img className='todayPhotoload' src={imageSrc} alt="preview-img" />}
                     </div>
-                    <div className="filebox"><label htmlFor="ex_file" >{isUpload && <img className="todayPhoto" src={Camera} />}<p>오늘의 공부 사진</p></label> <input type="file" id="ex_file" style={{ visibility: "hidden" }}
+                    <div className="filebox"><label htmlFor="ex_file" >{isUpload && <img className="todayPhoto" alt="DiaryPhoto" src={Camera} />}<p>오늘의 공부 사진</p></label> <input type="file" id="ex_file" style={{ visibility: "hidden" }}
                         onChange={(e) => { encodeFileToBase64(e.target.files[0]); setIsUpload(false) }} /> </div>
                     {/* 사진 관련 */}
                 </div>

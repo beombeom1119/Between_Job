@@ -6,7 +6,7 @@ body
   font-family: 'Gowun Dodum', sans-serif;
 }
 
-.container,.CreateForm {
+.container,.CreateForm.Header {
   display: flex;
 }
 
@@ -186,6 +186,8 @@ textarea:focus {
   background-color: #c3af89;
   height: 5vh;
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .Container 
@@ -203,6 +205,13 @@ textarea:focus {
 {
   margin-left: 13vw;
   font-size: 30px;
+  font-weight: 600;
+}
+
+.Container button
+{
+  margin-left: 13vw;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -237,6 +246,7 @@ textarea:focus {
 {
   margin-top: 20vh; 
   font-size: 30px;
+  margin-right: 3vw;
 }
 
 .diaryContainer
@@ -296,4 +306,50 @@ border: 0.3px solid #b9a581;
   width: 5vw;
   height: 10vh;
   border-radius: 3px;
+}
+
+.headerNav
+{
+  flex: 33.33%;
+  text-align: right;
+  vertical-align : center;
+  font-family: 'Asap', sans-serif;
+  font-size: large;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.headerNav label
+{
+  margin-left: 13vw;
+  margin-right: 13vw;
+  color: black;
+  margin-top: 1vh;
+  font-size: 1.5vw;
+}
+
+.headerNav a
+{
+  text-decoration: none !important;
+}
+
+.diaryHeader
+{
+  display: flex;
+}
+
+.diaryHeader button
+{
+  width: 7vw;
+  height: 6vh;
+  margin-top: 3.1vh;
+  margin-left: 50vw;
+  background-color: #c0a88d;
+  border-radius: 5px;
+  font-size: 20px;
+  border: none;
+  font-family: 'Gowun Dodum', sans-serif;
+  font-weight: 600;
 }
