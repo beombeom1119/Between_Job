@@ -51,6 +51,12 @@ public class DiaryController {
         return updateDiary;
     }
 
+    @DeleteMapping("/delete/{id}")
+    public String deleteDiary(@PathVariable Long id)
+    {
+        diaryService.deleteDiary(id);
+        return id+"번 글이 삭제되었습니다.";
+    }
 
 
 

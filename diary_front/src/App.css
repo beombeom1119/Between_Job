@@ -196,7 +196,7 @@ textarea:focus {
 
 .Container td
 {
-  width: 20vw;
+  width: 13vw;
 }
 
 .Container h2
@@ -212,7 +212,7 @@ textarea:focus {
   text-align: left;
   margin-left: 30px !important;
   margin-right: 20px !important;
-  font-size: 2vw !important;
+  font-size: 1.4vw !important;
   font-weight: 700px !important;
   margin-bottom: 30px !important;
 }
@@ -258,14 +258,42 @@ border: 0.3px solid #b9a581;
   width: 5vw;
   height: 4vh;
   margin-top: 2vh;
-  background-color: #a38f78;
-  border-radius: 5px ;
+  background-color: #c0a88d;
+  border-radius: 5px;
+  font-size: 20px;
   border: none;
   font-family: 'Gowun Dodum', sans-serif;
 }
 
-.updateButton:hover
+.updateButton a
 {
-  background-color: #c0a88d;
+  text-decoration: none !important ;
 }
 
+
+
+.deleteButton
+{
+  width: 5vw;
+  height: 4vh;
+  margin-top: 2vh;
+  background-color: #c0a88d;
+  border-radius: 5px;
+  font-size: 20px;
+  border: none;
+  font-family: 'Gowun Dodum', sans-serif;
+  color: red;
+  font-weight: 600;
+}
+
+
+.updateButton:hover, .deleteButton:hover
+{
+  background-color: #dcc1a1;
+}
+
+.t_commit img{
+  width: 5vw;
+  height: 10vh;
+  border-radius: 3px;
+}

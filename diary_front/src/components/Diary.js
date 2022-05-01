@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
 import Header from './layouts/Header'
+import commit_O from './images/commit_O.png'
+import commit_X from './images/commit_X.png'
 
 const Diary = () => {
 
@@ -23,6 +25,17 @@ const Diary = () => {
     console.log("score")
     fetchData()
   }
+
+  const deleteDiary = async (key) =>
+  {
+    if (window.confirm("글을 삭제하시겠습니까?") === true) {
+      await axios.delete(`http://localhost:8080/delete/${key}`, {})   
+      window.location.href = "/diary"
+  } else {
+    
+  }
+      
+  }
     
   return (
     <>
@@ -41,8 +54,9 @@ const Diary = () => {
               <div className='t_content'>{DiaryList.content}</div>
               </td>
               <div className='t_score'>{DiaryList.score}점</div>
-              <td><button className="updateButton"><a href={'/update/'+DiaryList.id}>수정</a></button></td>
-              {DiaryList.commit === true ? <td className='t_commit' onClick={()=>commit(DiaryList.id)}>O</td> : <td className='t_commit' onClick={()=>commit(DiaryList.id)}>X</td>}
+              <td><button className="updateButton"><a href={'/update/'+DiaryList.id}>수정</a></button> <button className="deleteButton" onClick={()=> deleteDiary(DiaryList.id)}>삭제</button></td>
+              
+              {DiaryList.commit === true ? <td className='t_commit' onClick={()=>commit(DiaryList.id)}><img src={commit_O}></img></td> : <td className='t_commit' onClick={()=>commit(DiaryList.id)}><img src={commit_X}></img></td>}
               
               {/* <td>{playerList.goal} <button onClick={async () => score(playerList.number)}>+</button> <button onClick={async () => {  score_cancel(playerList.number) }}>-</button> </td> */}                        
             </div>

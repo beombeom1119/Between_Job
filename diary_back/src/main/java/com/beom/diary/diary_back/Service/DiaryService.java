@@ -61,6 +61,13 @@ public class DiaryService {
     }
 
 
+    public void deleteDiary(Long id)
+    {
+        diaryRepository.deleteById(id);
+    }
+
+
+
 
 
 }
