@@ -6,6 +6,7 @@ import com.beom.diary.diary_back.dto.DiaryDto;
 import com.beom.diary.diary_back.entity.Diary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -36,6 +37,16 @@ public class DiaryController {
        Diary addDiary = diaryService.add(diaryDto);
        return addDiary;
     }
+
+
+    @PostMapping("/add/img")
+    public Diary addImg(@RequestBody DiaryDto diaryDto, MultipartFile file) throws Exception
+    {
+        Diary addDiary = diaryService.addImg(diaryDto,file);
+        return addDiary;
+    }
+
+
 
     @PutMapping("/update/{id}")
     public Diary update(@PathVariable Long id, @RequestBody DiaryDto diaryDto)

@@ -6,9 +6,12 @@ import com.beom.diary.diary_back.repository.DiaryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class DiaryService {
@@ -68,6 +71,17 @@ public class DiaryService {
 
 
 
-
+    public Diary addImg(DiaryDto diaryDto, MultipartFile file) throws Exception
+    {
+        Diary addtarget = diaryDto.toEntity();
+        String projectpath = System.getProperty("user.dir")+"/src/main/resources/static/files";
+        UUID uuid = UUID.randomUUID();
+        String filename = uuid+"-"+file.getOriginalFilename();
+        File saveFile = new File(projectpath,filename);
+        file.transferTo(saveFile);
+        addtarget.setImg(filename);
+        diaryRepository.save(addtarget);
+        return addtarget;
+    }
 
 }

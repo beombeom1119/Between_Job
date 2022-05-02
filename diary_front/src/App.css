@@ -18,7 +18,7 @@ body
 
 .box {
   flex: 33.33%;
-  height: 95vh;
+  height: 100vh;
   text-align: right;
   vertical-align : center;
   font-family: 'Asap', sans-serif;
@@ -244,7 +244,7 @@ textarea:focus {
 
 .t_commit
 {
-  margin-top: 20vh; 
+  margin-top: 25vh; 
   font-size: 30px;
   margin-right: 3vw;
 }
