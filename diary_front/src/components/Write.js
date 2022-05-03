@@ -7,11 +7,13 @@ import Header from './layouts/Header'
 
 
 const Write = () => {
- 
+  
+  const [first, setfirst] = useState("")
   const [Diary, setDiary] = useState({"id":1, "title":"","content":"","img":"","commit":false, "date":"","score":0})
   const [imageSrc, setImageSrc] = useState('');
   const [isUpload, setIsUpload] = useState(true);
 
+  ///////////////////////////////////////createDiary/////////////////////////
   const createDiary = async () => {
 
   const data = {
@@ -36,7 +38,10 @@ const Write = () => {
     .catch((error) => {
       console.log(error)
     })
+    
 }
+  ///////////////////////////////////////createDiary/////////////////////////
+
 
 const onChange = (e) => {
   const { name, value } = e.target;
@@ -48,8 +53,8 @@ const onChange = (e) => {
 
 const createDiaryForm = () => {
   if (window.confirm("일기를 추가하시겠습니까?") === true){    
-    createDiary();
-    window.location.href="/diary"
+    createDiary(); 
+    // window.location.href="/diary"
 }else{   
     
 }
@@ -66,6 +71,13 @@ const encodeFileToBase64 = (fileBlob) => {
     };
   });
 };
+
+const getDay = () => {
+  var a = new Date('2018-07-10 12:30')
+  console.log("!!!!!!!!!!!!!!")
+  console.log(a.getDay())
+  console.log("!!!!!!!!!!!!!!")
+}
   
 
   return (    
@@ -73,7 +85,7 @@ const encodeFileToBase64 = (fileBlob) => {
       <Header></Header>
       <form className='CreateForm'>
         <div className='CreateBox'>
-        <h1>취준 일기 작성</h1>
+        <h1 onClick={()=>getDay()}>취준 일기 작성</h1>
         <div className="preview">
           {imageSrc && <img className='todayPhotoload' src={imageSrc} alt="preview-img"/>}
         </div>

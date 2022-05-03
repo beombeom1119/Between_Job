@@ -32,7 +32,7 @@ public class DiaryController {
 
 
     @PostMapping("/add")
-    public Diary add(@RequestBody DiaryDto diaryDto)
+    public Diary add(@RequestBody  DiaryDto diaryDto)
     {
        Diary addDiary = diaryService.add(diaryDto);
        return addDiary;

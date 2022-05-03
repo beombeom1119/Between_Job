@@ -14,7 +14,7 @@ const Home = () => {
     <div className='box'><div><Link to="/diary"><img src={Book} alt="Diary"></img></Link><h1>Diary</h1></div></div>
     <div className='box'><div><Link to="/theseday"><img src={Calendar} alt="Theseday"></img></Link><h1>Theseday</h1></div></div>
     </div>
-    
+    <div><Link to="/img"><h1>IMG TEST</h1></Link></div>
     </>
   )
 }
