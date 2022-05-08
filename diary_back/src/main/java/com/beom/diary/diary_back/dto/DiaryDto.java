@@ -19,6 +19,7 @@ public class DiaryDto {
 
 
 
+    //Entity Diary와 연결하는 to Entity
     public Diary toEntity()
     {
         return new Diary(id,title,content,img, date, commit,score);
