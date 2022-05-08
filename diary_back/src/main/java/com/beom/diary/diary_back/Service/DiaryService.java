@@ -20,17 +20,19 @@ public class DiaryService {
     @Autowired
     DiaryRepository diaryRepository;
 
-
+    //모든 글 가져오기
     public List<Diary> getAll()
     {
         return (List<Diary>) diaryRepository.findAll();
     }
 
+    //ID를 통해 글 가져오기
     public Optional<Diary> getId(Long id)
     {
         return diaryRepository.findById(id);
     }
 
+    //글 추가
     public Diary add(DiaryDto diaryDto)
     {
         Diary addtarget = diaryDto.toEntity();
@@ -38,6 +40,7 @@ public class DiaryService {
         return addtarget;
     }
 
+    //글 수정
     public Diary update(Long id, DiaryDto diaryDto)
     {
         Diary diary = diaryDto.toEntity();
@@ -47,6 +50,7 @@ public class DiaryService {
         return updateDiary;
     }
 
+    //커밋 했는지 안했는지를 확인하는 함수
     public Diary updateCommit(Long id)
     {
 
@@ -63,7 +67,7 @@ public class DiaryService {
         return updateCommitDiary;
     }
 
-
+    //글 삭제
     public void deleteDiary(Long id)
     {
         diaryRepository.deleteById(id);

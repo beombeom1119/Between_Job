@@ -38,14 +38,12 @@ public class DiaryController {
        return addDiary;
     }
 
-
     @PostMapping("/add/img")
     public Diary addImg(@RequestBody DiaryDto diaryDto, MultipartFile file) throws Exception
     {
         Diary addDiary = diaryService.addImg(diaryDto,file);
         return addDiary;
     }
-
 
 
     @PutMapping("/update/{id}")
