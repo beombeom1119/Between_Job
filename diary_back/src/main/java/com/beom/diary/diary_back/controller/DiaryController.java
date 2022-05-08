@@ -15,28 +15,31 @@ import java.util.Optional;
 public class DiaryController {
 
     @Autowired
-    DiaryService diaryService;
+    DiaryService diaryService;      ///Autowired
 
 
+    //모든 글 찾기
     @GetMapping("/getall")
     public List<Diary> getAll()
     {
         return diaryService.getAll();
     }
 
+    //ID로 글 찾기
     @GetMapping("/getid/{id}")
     public Optional<Diary> getid(@PathVariable Long id)
     {
         return diaryService.getId(id);
     }
 
-
+    //글 추가
     @PostMapping("/add")
     public Diary add(@RequestBody  DiaryDto diaryDto)
     {
        Diary addDiary = diaryService.add(diaryDto);
        return addDiary;
     }
+
 
     @PostMapping("/add/img")
     public Diary addImg(@RequestBody DiaryDto diaryDto, MultipartFile file) throws Exception
@@ -46,6 +49,7 @@ public class DiaryController {
     }
 
 
+    //글 수정
     @PutMapping("/update/{id}")
     public Diary update(@PathVariable Long id, @RequestBody DiaryDto diaryDto)
     {
@@ -53,6 +57,7 @@ public class DiaryController {
         return updateDiary;
     }
 
+    //커밋 수정
     @PutMapping("/update/commit/{id}")
     public Diary updateCommit(@PathVariable Long id)
     {
@@ -60,6 +65,7 @@ public class DiaryController {
         return updateDiary;
     }
 
+    //글 삭제
     @DeleteMapping("/delete/{id}")
     public String deleteDiary(@PathVariable Long id)
     {
