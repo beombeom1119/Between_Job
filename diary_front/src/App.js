@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Diary from './components/Diary';
+import Image from './components/Image';
 import Home from './components/Home';
 import Update from './components/Update';
 import Write from './components/Write';
@@ -18,6 +19,7 @@ function App() {
     <Route exact path="/" element={<Home/>}/>
     {/* <Route path="/mypage" element= {<MyPage></MyPage>}></Route> */}
     <Route path="/diary" element= {<Diary/>}/>
+    <Route path="/image" element= {<Image/>}/>
     <Route path="/write" element= {<Write/>}/>
     <Route path="/theseday" element={<Theseday/>} />
     <Route path="/update/:id" element={<Update/>} />

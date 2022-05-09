@@ -4,6 +4,8 @@ package com.beom.diary.diary_back.controller;
 import com.beom.diary.diary_back.Service.DiaryService;
 import com.beom.diary.diary_back.dto.DiaryDto;
 import com.beom.diary.diary_back.entity.Diary;
+import com.beom.diary.diary_back.entity.Image;
+import com.beom.diary.diary_back.repository.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,6 +18,9 @@ public class DiaryController {
 
     @Autowired
     DiaryService diaryService;      ///Autowired
+
+    @Autowired
+    ImageRepository imageRepository; //Image
 
 
     //모든 글 찾기
@@ -39,15 +44,6 @@ public class DiaryController {
        Diary addDiary = diaryService.add(diaryDto);
        return addDiary;
     }
-
-
-    @PostMapping("/add/img")
-    public Diary addImg(@RequestBody DiaryDto diaryDto, MultipartFile file) throws Exception
-    {
-        Diary addDiary = diaryService.addImg(diaryDto,file);
-        return addDiary;
-    }
-
 
     //글 수정
     @PutMapping("/update/{id}")
@@ -73,6 +69,13 @@ public class DiaryController {
         return id+"번 글이 삭제되었습니다.";
     }
 
+
+
+    @GetMapping("/image/getall")
+    public List<Image> getallImage()
+    {
+        return (List<Image>) imageRepository.findAll();
+    }
 
 
 }

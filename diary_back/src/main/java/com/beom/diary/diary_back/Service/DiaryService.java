@@ -50,6 +50,7 @@ public class DiaryService {
         return updateDiary;
     }
 
+
     //커밋 했는지 안했는지를 확인하는 함수
     public Diary updateCommit(Long id)
     {
@@ -75,17 +76,6 @@ public class DiaryService {
 
 
 
-    public Diary addImg(DiaryDto diaryDto, MultipartFile file) throws Exception
-    {
-        Diary addtarget = diaryDto.toEntity();
-        String projectpath = System.getProperty("user.dir")+"/src/main/resources/static/files";
-        UUID uuid = UUID.randomUUID();
-        String filename = uuid+"-"+file.getOriginalFilename();
-        File saveFile = new File(projectpath,filename);
-        file.transferTo(saveFile);
-        addtarget.setImg(filename);
-        diaryRepository.save(addtarget);
-        return addtarget;
-    }
+
 
 }
