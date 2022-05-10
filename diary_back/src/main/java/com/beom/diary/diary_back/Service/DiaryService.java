@@ -2,13 +2,16 @@ package com.beom.diary.diary_back.Service;
 
 import com.beom.diary.diary_back.dto.DiaryDto;
 import com.beom.diary.diary_back.entity.Diary;
+import com.beom.diary.diary_back.entity.Image;
 import com.beom.diary.diary_back.repository.DiaryRepository;
+import com.beom.diary.diary_back.repository.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -19,6 +22,9 @@ public class DiaryService {
 
     @Autowired
     DiaryRepository diaryRepository;
+
+    @Autowired
+    ImageRepository imageRepository;
 
     //모든 글 가져오기
     public List<Diary> getAll()
@@ -75,6 +81,22 @@ public class DiaryService {
     }
 
 
+    public void uploadFile(MultipartFile file) throws IOException {
+        file.transferTo(new File("/Users/beom/Documents/Diary_JOB/diary_back/src/main/resources/static/image/"+file.getOriginalFilename()));
+
+    }
+
+
+
+    public void uploadForm(String title, String content, MultipartFile file) throws IOException {
+        file.transferTo(new File("/Users/beom/Documents/Diary_JOB/diary_back/src/main/resources/static/image/"+file.getOriginalFilename()));
+        Image target = new Image();
+        target.setId(1L);
+        target.setTitle(title);
+        target.setContent(content);
+        target.setPathname("/Users/beom/Documents/Diary_JOB/diary_back/src/main/resources/static/image/"+file.getOriginalFilename());
+        imageRepository.save(target);
+    }
 
 
 

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -70,11 +71,30 @@ public class DiaryController {
     }
 
 
-
     @GetMapping("/image/getall")
     public List<Image> getallImage()
     {
         return (List<Image>) imageRepository.findAll();
+    }
+
+
+    @PostMapping("/image/post")
+    public void uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
+        diaryService.uploadFile(file);
+    }
+
+
+    @PostMapping("/form/post")
+    public String uploadForm(@RequestParam(value = "title",required = false) String title,@RequestParam(value = "content",required = false) String content,@RequestParam("file") MultipartFile file) throws IOException {
+        try {
+            diaryService.uploadForm(title, content, file);
+            return "성공 했습니다.";
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return"성공 못했습니다.";
+
+
     }
 
 

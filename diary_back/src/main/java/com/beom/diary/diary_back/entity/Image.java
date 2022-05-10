@@ -21,5 +21,5 @@ public class Image {
     @Column
     private String content;
     @Column
-    private String img;
+    private String pathname;
 }
